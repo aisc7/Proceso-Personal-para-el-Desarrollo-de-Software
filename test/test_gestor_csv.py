@@ -18,15 +18,15 @@ class TestGestorCSV(unittest.TestCase):
         self.gestor = GestorCSV()
 
     def test_procesarDatos(self):
-        estudiantes = self.gestor.procesarDatos(self.datos)
-        self.assertEqual(estudiantes["1234567"].contarMaterias(), 2)
-        self.assertEqual(estudiantes["9876534"].contarMaterias(), 1)
-        self.assertEqual(estudiantes["4567766"].contarMaterias(), 2)
+            estudiantes = self.gestor.procesarDatos(self.datos)
+            self.assertEqual(estudiantes["1234567"].contarMaterias(), 2)  # Lulú López tiene 2 materias
+            self.assertEqual(estudiantes["9876534"].contarMaterias(), 1)  # Pepito Pérez tiene 1 materia
+            self.assertEqual(estudiantes["4567766"].contarMaterias(), 2)  # Calvin Clein tiene 2 materias
 
     def test_contarMaterias(self):
-        est = Estudiante("123", "Ejemplo Estudiante")
+        est = Estudiante("123", "Ej Estudiante")
         est.agregarMateria("1010")
-        est.agregarMateria("2020")
+        est.agregarMateria("2120")
         est.agregarMateria("1010")  # No debería contarla dos veces
         self.assertEqual(est.contarMaterias(), 2)
 
